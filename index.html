@@ -20,12 +20,12 @@ Brief Description of Goal of Code:
 The goal of this code is to help the user determine if their symptoms are more likely due to cold or allergies.
  
 Known Issues:
-blah, blah, blah, blah
+No known issues
 
 https://www.w3schools.com/w3css/default.asp
 https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-file
 -->
-	
+
    <head> 
       <title>Hello World</title>  
       <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -36,19 +36,23 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 
 
 <script>
+	// Sets variables for allergy count, cold count, allergy percent, and cold percent
         var allergy_count = 0;
         var cold_count = 0;
 	var allergy_percent = 0;
 	var cold_percent = 0;
-
+	
+	// Adds one to the allergy symptom count
         function allergyAdd(){
             allergy_count = allergy_count + 1;
         }
 
+	// Adds one to the cold symptom count
         function coldAdd(){
             cold_count = cold_count + 1;
         }
 	
+	// Calculates and displays the probability that it is a cold or allergies
 	function calculateResults(){
 		allergy_percent = 100 * allergy_count / 6;
 		cold_percent = 100 - allergy_percent;
@@ -58,7 +62,7 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
   </script>
 
 
-
+<!-- Sets style for web page -->
 <style>	
 .body {
      margin: 0em;
@@ -81,11 +85,13 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 }
 </style>
 
+<!-- Creates header for front page -->
 <body>
 <div id="header" class="w3-container w3-flat-carrot">
 	<h1>Cold or Allergies?</h1>
 </div>
-	
+
+<!-- Creates body text for front page -->
 <div id="content" class="w3-container">
 	<p>Are you feeling like you might have a cold but wonder if it is allergies. Answer a few short questions to find out!</p>
 	
@@ -95,11 +101,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
  	
 	<p>THIS CODE SHOULD NOT BE USED TO DIAGNOSE ANY KIND OF MEDICAL CONDITION.</p>
 
+
 <div class="page" id="one">
+	<!-- Creates header for first question -->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 1</h1>
 	</div>
 	
+	<!-- Asks user the first question and adds one to allergy_count for yes, cold_count for no -->
     	<div id="content" class="w3-container">
         	<p>Are your eyes watery or itchy?</p>
 		<a href="#two"  onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
@@ -107,11 +116,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     	</div>
 </div>
 
+
 <div class="page" id="two">
+	<!-- Creates header for second question -->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 2</h1>
 	</div>
-	
+
+	<!-- Asks user the second question and adds one to cold_count for yes, allergy_count for no -->
 	<div id="content" class="w3-container">
 		<p>Do you have a fever?</p>
 		<a href="#three"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
@@ -119,11 +131,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 </div>	
 
+
 <div class="page" id="three">
+	<!-- Creates header for third question -->
 	<div class="w3-container w3-flat-carrot">
 		<h1>Question 3</h1>
 	</div>
 	
+	<!-- Asks user the third question and adds one to cold_count for yes, allergy_count for no -->
 	<div id="content" class="w3-container">
 		<p>Do you have a sore throat?</p>
 		<a href="#four"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
@@ -132,10 +147,12 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div>	
 
 <div class="page" id="four">
+	<!-- Creates header for fourth question -->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 4</h1>
 	</div>
-	
+
+	<!-- Asks user the fourth question and adds one to allergy_count for yes, cold_count for no -->
     	<div id="content" class="w3-container">
         	<p>Are your symptoms seasonal?</p>
 		<a href="#five"  onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
@@ -143,11 +160,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     	</div>
 </div>
 
+
 <div class="page" id="five">
+	<!-- Creates header for fifth question -->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 5</h1>
 	</div>
 	
+	<!-- Asks user the fifth question and adds one to cold_count for yes, allergy_count for no -->
     	<div id="content" class="w3-container">
         	<p>Do you have general aches and pains?</p>
 		<a href="#six"  onclick="coldAdd();" class="w3-btn w3-black">Yes</a>
@@ -155,11 +175,14 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
     	</div>
 </div>	
 
+
 <div class="page" id="six">
+	<!-- Creates header for sixth question -->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Question 6</h1>
 	</div>
 	
+	<!-- Asks user the sixth question and adds one to allergy_count for yes, cold_count for no -->
     	<div id="content" class="w3-container">
         	<p>Have your symptoms lasted for more than a week?</p>
 		<a href="#results_page"  onclick="allergyAdd();" class="w3-btn w3-black">Yes</a>
@@ -168,15 +191,18 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 </div>	
 
 <div class="page" id="results_page">
+	<!-- Creates header for results page -->
 	<div id="header" class="w3-container w3-flat-carrot">
 		<h1>Results</h1>
 	</div>
 	
+	<!-- Creates button that displays results upon being clicked -->
 	<div id="content" class="w3-container">
 		<p id="results"><a href="#results_page" onclick="calculateResults()";" class="w3-btn w3-black">Click for results</a></p>
 	</div>
 </div>
-	
+
+<!-- Creates footer -->
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
