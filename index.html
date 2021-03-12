@@ -38,7 +38,8 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 <script>
         var allergy_count = 0;
         var cold_count = 0;
-
+	var allergy_percent = 0;
+	var cold_percent = 0;
 
         function allergyAdd(){
             allergy_count = allergy_count + 1;
@@ -49,6 +50,10 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
         function coldAdd(){
             cold_count = cold_count + 1;
         }
+	
+	function results(){
+		allergy_percent = 100 * allergy_count / (allergy_count + cold_count);
+		cold_percent = 100 - allergy_percent;
 
   </script>
 
@@ -96,7 +101,9 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
     	<div id="content" class="w3-container">
-        <p>Put Question 1 content here.</p>    
+        	<p>Are your eyes watery or itchy?</p>
+		<a href="#two”  onclick="allergyAdd();” class="w3-btn w3-black">Yes</a>
+		<a href="#two"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
     	</div>
 </div>
 
@@ -106,10 +113,68 @@ https://stackoverflow.com/questions/8211128/multiple-distinct-pages-in-one-html-
 	</div>
 	
 	<div id="content" class="w3-container">
-		<p>Content of page 2 goes here.</p>
+		<p>Do you have a fever?</p>
+		<a href="#three”  onclick="coldAdd();” class="w3-btn w3-black">Yes</a>
+		<a href="#three"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
 	</div>
 </div>	
 
+<div class="page" id="three">
+	<div class="w3-container w3-flat-carrot">
+		<h1>Question 3</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p>Do you have a sore throat?</p>
+		<a href="#four”  onclick="coldAdd();” class="w3-btn w3-black">Yes</a>
+		<a href="#four"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+	</div>
+</div>	
+
+<div class="page" id="four">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 4</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        	<p>Are your symptoms seasonal?</p>
+		<a href="#five”  onclick="allergyAdd();” class="w3-btn w3-black">Yes</a>
+		<a href="#five"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+    	</div>
+</div>
+
+<div class="page" id="five">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 5</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        	<p>Do you have general aches and pains?</p>
+		<a href="#six”  onclick="coldAdd();” class="w3-btn w3-black">Yes</a>
+		<a href="#six"  onclick="allergyAdd();" class="w3-btn w3-black">No</a>
+    	</div>
+</div>	
+
+<div class="page" id="six">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Question 6</h1>
+	</div>
+	
+    	<div id="content" class="w3-container">
+        	<p>Have your symptoms lasted for more than a week?</p>
+		<a href="#results”  onclick="allergyAdd();” class="w3-btn w3-black">Yes</a>
+		<a href="#results"  onclick="coldAdd();" class="w3-btn w3-black">No</a>
+    	</div>
+</div>	
+
+<div class="page" id="results">
+	<div id="header" class="w3-container w3-flat-carrot">
+		<h1>Results</h1>
+	</div>
+	
+	<div id="content" class="w3-container">
+		<p id="results"></p>
+	
 <footer class="w3-bottom w3-container w3-flat-carrot">
 	<p>DIY!</p>
 </footer>
